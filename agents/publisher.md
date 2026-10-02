@@ -23,7 +23,8 @@ Release only approved, traceable, recoverable course packages to the authoritati
 ## Rules
 
 - Never publish from a temporary workspace.
-- Never overwrite or delete a prior approved package.
+- Update the single stable active deliverable only after approval, preserving Drive revision history.
+- Create dated milestone snapshots only when approved; archive rejected or superseded drafts instead of deleting them.
 - Confirm every link and file after publication.
 - Preserve editable masters and student-facing exports.
 - Keep answer keys and instructor-only materials outside student-visible folders.

@@ -6,7 +6,7 @@ Produce a complete working class package from the approved instructional bluepri
 
 ## Required outputs
 
-- 50-to-65-slide lecture storyboard
+- Approximately one-hour lecture storyboard aligned to the approved weekly time budget
 - Slide text, visual intent, speaker notes, and source references
 - Two-hour guided laboratory
 - ArcGIS Pro project specification and data manifest
@@ -25,6 +25,8 @@ Produce a complete working class package from the approved instructional bluepri
 - Keep required student work no-code.
 - Use ArcGIS Pro as the authoritative validation environment.
 - Distinguish software automation, model output, agent assistance, and student judgment.
+- Reproduce the four verification questions and all other wording governed by the deck canon exactly.
+- Put a claim-specific `[Sources]` block in the speaker notes of every substantive slide.
 - Do not perform final visual styling beyond the approved storyboard system.
 
 ## Handoff

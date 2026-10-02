@@ -72,7 +72,7 @@ Every week must contain:
 
 - Approved evidence pack
 - Approved instructional blueprint
-- 50-to-65-slide lecture with speaker notes and source references
+- Approximately one-hour lecture with speaker notes and source references
 - Two-hour guided laboratory
 - ArcGIS Pro project specification and data manifest
 - Instructor guide and troubleshooting guide

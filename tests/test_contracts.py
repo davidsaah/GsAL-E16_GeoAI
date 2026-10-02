@@ -37,7 +37,7 @@ class ContractTests(unittest.TestCase):
         required_phrases = [
             "Eight class meetings",
             "No programming required",
-            "50 to 65 slides",
+            "Approximately one hour per lecture",
             "ArcGIS Pro",
             "Week 8",
             "David Saah",

@@ -1,28 +1,26 @@
 # Course Design System
 
-This system is intentionally provisional and is not an official USF brand specification. Official institutional requirements take precedence when provided.
+This system reflects the current E16 course canon. Official University of San Francisco requirements and the active weekly deck take precedence if they change.
 
 ## Design character
 
 The course should feel scientific, contemporary, spatial, environmentally grounded, and confident. It should avoid generic corporate-AI imagery, decorative circuitry, cluttered dashboards, and walls of text.
 
-## Provisional palette
+## Course palette
 
 | Role | Color | Hex |
 |---|---|---|
-| Primary ink | Deep blue | `#17324D` |
-| Environmental anchor | Forest green | `#176B4D` |
-| Spatial accent | Clear blue | `#2F80B7` |
-| Warm field tone | Sand | `#F3EBDD` |
-| Attention accent | Coral | `#D96C4A` |
-| Background | Warm white | `#FAFAF7` |
-| Body text | Charcoal | `#20262C` |
+| Primary | USF Green | `#00543C` |
+| Signature accent | USF Gold | `#FDBB30` |
+| Neutral | USF Gray | `#919194` |
+| Background | White | `#FFFFFF` |
+| Body text | Near black | `#1A1A1A` |
 
-Use coral only for warnings, attention, and limited emphasis. Never rely on red and green alone to communicate categories.
+Use supporting colors only when charts require categorical distinction. Never rely on color alone to communicate meaning. Use a narrow USF Gold signature line across the top of each slide and dark green section openers for pacing and contrast.
 
 ## Typography
 
-- Use Aptos, Arial, or another broadly available sans-serif family.
+- Use Arial.
 - Titles: 30 to 38 pt
 - Primary body text: 22 to 28 pt
 - Captions and source notes: 14 to 18 pt
@@ -31,7 +29,7 @@ Use coral only for warnings, attention, and limited emphasis. Never rely on red 
 
 ## Slide rhythm
 
-A 50-to-65-slide lecture should include:
+An approximately one-hour lecture should include:
 
 - Opening environmental question
 - Course-location slide showing where the class fits
