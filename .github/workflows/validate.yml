@@ -1,0 +1,22 @@
+name: Validate course factory
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Run repository validation
+        run: bash scripts/validate_repo.sh
+
+      - name: Run contract tests
+        run: python3 -m unittest discover -s tests -v

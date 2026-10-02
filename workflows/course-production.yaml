@@ -1,0 +1,113 @@
+name: e16-course-production
+version: 0.1.0
+owner: David Saah
+coordinator: course-producer
+
+global_rules:
+  constitution: standards/course-constitution.md
+  max_automated_revision_cycles: 3
+  published_material_is_immutable: true
+  students_write_code: false
+  final_human_approval_required: true
+
+states:
+  - SCOPED
+  - RESEARCH_COMPLETE
+  - PEDAGOGY_APPROVED
+  - CONTENT_DRAFTED
+  - STUDENT_TESTED
+  - DESIGN_COMPLETE
+  - CRITIC_PASSED
+  - HUMAN_PILOT_PASSED
+  - DAVID_APPROVED
+  - PUBLISHED
+
+transitions:
+  - from: SCOPED
+    to: RESEARCH_COMPLETE
+    actor: research-librarian
+    gate: evidence_pack_valid
+
+  - from: RESEARCH_COMPLETE
+    to: PEDAGOGY_APPROVED
+    actor: pedagogy-architect
+    gate: david_scope_approval
+
+  - from: PEDAGOGY_APPROVED
+    to: CONTENT_DRAFTED
+    actor: course-builder
+    gate: class_package_manifest_valid
+
+  - from: CONTENT_DRAFTED
+    to: STUDENT_TESTED
+    actor: student-tester
+    gate: no_critical_usability_findings
+
+  - from: STUDENT_TESTED
+    to: DESIGN_COMPLETE
+    actor: visual-designer
+    gate: accessibility_report_complete
+
+  - from: DESIGN_COMPLETE
+    to: CRITIC_PASSED
+    actor: independent-critic
+    gate: critic_recommendation_pass
+
+  - from: CRITIC_PASSED
+    to: HUMAN_PILOT_PASSED
+    actor: human-pilot
+    gate: arcgis_lab_completed_within_time
+
+  - from: HUMAN_PILOT_PASSED
+    to: DAVID_APPROVED
+    actor: david-saah
+    gate: explicit_human_approval
+
+  - from: DAVID_APPROVED
+    to: PUBLISHED
+    actor: publisher
+    gate: publication_readback_passed
+
+revision_routes:
+  - trigger: evidence_failure
+    return_to: research-librarian
+  - trigger: pedagogy_failure
+    return_to: pedagogy-architect
+  - trigger: content_or_lab_failure
+    return_to: course-builder
+  - trigger: design_or_accessibility_failure
+    return_to: visual-designer
+  - trigger: three_failed_revision_cycles
+    escalate_to: david-saah
+
+permissions:
+  course-producer:
+    read: [all_staging, reviews, workflow_state]
+    write: [assignments, workflow_state, approval_briefs]
+  research-librarian:
+    read: [approved_sources, course_scope]
+    write: [research_staging]
+  pedagogy-architect:
+    read: [accepted_evidence, course_constitution]
+    write: [pedagogy_staging]
+  course-builder:
+    read: [accepted_evidence, approved_blueprint, templates]
+    write: [content_staging]
+  student-tester:
+    read: [student_facing_drafts]
+    write: [review_staging]
+  visual-designer:
+    read: [student_tested_content, design_system, approved_assets]
+    write: [design_staging]
+  independent-critic:
+    read: [complete_package, standards]
+    write: [review_staging]
+  publisher:
+    read: [approved_package, approvals]
+    write: [approved_drive_folder, published_drive_folder, archive_drive_folder]
+
+notifications:
+  after_each_gate:
+    audience: david-saah
+    format: mobile_summary
+    fields: [class_number, current_state, decision_needed, critical_risks, next_action]

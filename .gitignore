@@ -1,0 +1,48 @@
+.env
+.env.*
+!.env.example
+
+# Credentials and secrets
+credentials/
+secrets/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Runtime state
+postgres_data/
+qdrant_data/
+ollama_data/
+n8n_data/
+workspaces/
+staging/
+exports/
+logs/
+backups/
+
+# Course data and student work
+data/
+student_work/
+student_records/
+*.gdb/
+*.tif
+*.tiff
+*.jp2
+*.img
+*.las
+*.laz
+
+# Generated office files
+*.pptx
+*.docx
+*.xlsx
+*.pdf
+
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+__pycache__/
+*.pyc

@@ -1,0 +1,88 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [course_factory]
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    restart: unless-stopped
+    volumes:
+      - qdrant_data:/qdrant/storage
+    networks: [course_factory]
+
+  ollama:
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    networks: [course_factory]
+
+  n8n:
+    image: ${N8N_IMAGE}
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+      ollama:
+        condition: service_started
+    ports:
+      - "127.0.0.1:${N8N_PORT}:5678"
+    environment:
+      DB_TYPE: postgresdb
+      DB_POSTGRESDB_HOST: postgres
+      DB_POSTGRESDB_PORT: 5432
+      DB_POSTGRESDB_DATABASE: ${POSTGRES_DB}
+      DB_POSTGRESDB_USER: ${POSTGRES_USER}
+      DB_POSTGRESDB_PASSWORD: ${POSTGRES_PASSWORD}
+      N8N_HOST: ${N8N_HOST}
+      N8N_PORT: 5678
+      N8N_PROTOCOL: ${N8N_PROTOCOL}
+      N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY}
+      WEBHOOK_URL: ${WEBHOOK_URL}
+      GENERIC_TIMEZONE: ${GENERIC_TIMEZONE}
+      EXECUTIONS_DATA_PRUNE: "true"
+      EXECUTIONS_DATA_MAX_AGE: 336
+      N8N_DIAGNOSTICS_ENABLED: "false"
+      N8N_PERSONALIZATION_ENABLED: "false"
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL}
+      QDRANT_URL: ${QDRANT_URL}
+      GOOGLE_DRIVE_ROOT_FOLDER_ID: ${GOOGLE_DRIVE_ROOT_FOLDER_ID}
+      GOOGLE_DRIVE_STAGING_FOLDER_ID: ${GOOGLE_DRIVE_STAGING_FOLDER_ID}
+      GOOGLE_DRIVE_REVIEW_FOLDER_ID: ${GOOGLE_DRIVE_REVIEW_FOLDER_ID}
+      GOOGLE_DRIVE_APPROVED_FOLDER_ID: ${GOOGLE_DRIVE_APPROVED_FOLDER_ID}
+      GOOGLE_DRIVE_PUBLISHED_FOLDER_ID: ${GOOGLE_DRIVE_PUBLISHED_FOLDER_ID}
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ../agents:/course-factory/agents:ro
+      - ../standards:/course-factory/standards:ro
+      - ../schemas:/course-factory/schemas:ro
+      - ../workflows:/course-factory/workflows:ro
+      - course_workspaces:/course-factory/workspaces
+    networks: [course_factory]
+
+networks:
+  course_factory:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  qdrant_data:
+  ollama_data:
+  n8n_data:
+  course_workspaces:

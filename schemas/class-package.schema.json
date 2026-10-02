@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/gsal/class-package.schema.json",
+  "title": "E16 class package manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "class_number",
+    "class_title",
+    "version",
+    "status",
+    "learning_outcomes",
+    "artifacts",
+    "dependencies",
+    "fallbacks",
+    "reviews",
+    "approvals"
+  ],
+  "properties": {
+    "class_number": {"type": "integer", "minimum": 1, "maximum": 8},
+    "class_title": {"type": "string", "minLength": 1},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "status": {
+      "enum": [
+        "SCOPED",
+        "RESEARCH_COMPLETE",
+        "PEDAGOGY_APPROVED",
+        "CONTENT_DRAFTED",
+        "STUDENT_TESTED",
+        "DESIGN_COMPLETE",
+        "CRITIC_PASSED",
+        "HUMAN_PILOT_PASSED",
+        "DAVID_APPROVED",
+        "PUBLISHED"
+      ]
+    },
+    "learning_outcomes": {"type": "array", "minItems": 3, "maxItems": 5, "items": {"type": "string"}},
+    "artifacts": {
+      "type": "object",
+      "required": ["evidence_pack", "instructional_blueprint", "lecture", "lab", "instructor_guide", "answer_key", "data_manifest"],
+      "additionalProperties": {"type": ["string", "null"]}
+    },
+    "dependencies": {"type": "array", "items": {"type": "object"}},
+    "fallbacks": {"type": "array", "items": {"type": "object"}},
+    "reviews": {"type": "array", "items": {"type": "object"}},
+    "approvals": {"type": "array", "items": {"type": "object"}}
+  }
+}
