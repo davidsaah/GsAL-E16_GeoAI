@@ -55,3 +55,8 @@ Read the complete current guide and applicable companion files. Record IDs, vers
 ## Handoff in every Producer cycle
 
 Send the exact saved artifacts and the brand, attribution, accessibility and preservation reports to the Course Producer and Critic after each assigned design revision, not only after the last design pass. Report findings with artifact ID, slide/tab/element location, severity, governing source, proposed exact correction, owner and acceptance evidence. The Critic independently checks the applicable criteria and corrections against those versions; the Designer cannot approve its own output. This recurring handoff does not bypass workflow gates, formal Critic independence or final human review.
+
+## Continuous production coordination
+
+Read the common cycle contract in `agents/README.md`. Perform scoped rendering/design checks during every affected Producer cycle, even while unrelated usability dependencies remain open. Resolve design findings as the assigned design writer; route scientific/instructional changes to the content writer. Provide source/version-specific acceptance evidence to the Critic, never self-approve. Full final package inspection remains required before DESIGN_COMPLETE; incomplete surfaces do not establish accessibility or rights.
+
