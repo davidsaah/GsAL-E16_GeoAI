@@ -58,3 +58,10 @@ New-cycle structured reports must populate review_context in the review schema. 
 A separate same-family agent may perform substantive formative review but must label it advisory. It cannot issue formal CRITIC_PASSED. Final formal review requires different-primary-family independence and all exact final artifacts. If independence or required evidence is unavailable, record BLOCK and continue useful unrelated work. Formative report recommendations do not advance release gates.
 
 No human review is required each routine cycle. Consolidate remaining decisions for the final human phase; never turn authored cases, simulations, prepared outputs or classroom provision into live-agent/MCP/ArcGIS execution, measured timings, asset rights or novice pilot evidence. Changes after final review invalidate affected acceptance and require another review.
+
+## Technology adoption and report feedback
+
+Each cycle independently check selected Tech Report revision/technology IDs, verified primary evidence and exact proposed classroom use. Review objective benefit, content replaced/time fit, student versus instructor burden, scientific/GIS validity, artifact-specific rights, cost/quotas, permissions/privacy, setup and saving, accessible branded presentation, fallback and stop conditions.
+
+Check discoveries/entry corrections before they support adoption; incomplete candidates can remain clearly unverified in the backlog. A report ranking, existing incorporation or access confirmation is not runtime/human evidence or authorization. Record read-only findings and report-update proposals through Producer, including changed shared/cross-week consumers. Test results and failures must remain traceable after report writeback. Report-entry acceptance is separate from teaching-package gates and formal independence.
+
