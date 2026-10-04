@@ -38,3 +38,11 @@ Submit an evidence pack conforming to `schemas/evidence-pack.schema.json`. The P
 
 Research within the already approved scope without routine human approval. Recheck source/version/license/access/fallback evidence for affected claims and tools each cycle. Do not equate provisioned ArcGIS Pro 3.7.2, prepared outputs, authored offline cases or proposed services with actual execution. Hand the exact evidence versions to Pedagogy, Producer and Critic; resolve source findings and downstream shared-resource effects using the common finding register and eight-row matrix. Request David's decision only for material scope/constitution changes or missing authority.
 
+## Bidirectional technology research
+
+Read assigned current Tech Report entries and record exact report revision/technology IDs. Verify capabilities, source dates, selected releases and actual access against primary sources before handing claims to Builder. Separate student usability from instructor preparation burden; software/model/data/imagery rights; service tier/cost/quota/hardware; privacy/permissions and stop conditions. Open source, open weights, free hosting and no-cost classroom operation are different findings.
+
+Verify discovery packets assigned by Producer, including duplicate/alias/component checks. Preserve direct instructor operational statements as attributed evidence; investigate conflicting public documentation without silently discarding either. Do not extrapolate confirmed access or imagery restoration to products, dates, licenses or classroom capacity.
+
+Submit precise proposed report corrections, stable existing IDs or candidate new IDs, governing sources, unresolved UNKNOWN/NOT_RUN fields and linked acceptance evidence. Act as report writer only if expressly assigned; use the shared guarded-update contract. Return failures and actual test receipts as well as successes; no rights or execution claims from documentation alone.
+
