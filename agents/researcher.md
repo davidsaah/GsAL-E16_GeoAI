@@ -33,3 +33,8 @@ Create a defensible evidence base for one class using current, authoritative, an
 ## Handoff
 
 Submit an evidence pack conforming to `schemas/evidence-pack.schema.json`. The Pedagogy Architect receives only accepted evidence packs.
+
+## Every-cycle participation
+
+Research within the already approved scope without routine human approval. Recheck source/version/license/access/fallback evidence for affected claims and tools each cycle. Do not equate provisioned ArcGIS Pro 3.7.2, prepared outputs, authored offline cases or proposed services with actual execution. Hand the exact evidence versions to Pedagogy, Producer and Critic; resolve source findings and downstream shared-resource effects using the common finding register and eight-row matrix. Request David's decision only for material scope/constitution changes or missing authority.
+
