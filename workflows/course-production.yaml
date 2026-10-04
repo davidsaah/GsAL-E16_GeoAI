@@ -1,5 +1,5 @@
 name: e16-course-production
-version: 0.2.0
+version: 0.3.0
 owner: David Saah
 coordinator: course-producer
 
@@ -101,25 +101,25 @@ revision_routes:
 
 permissions:
   course-producer:
-    read: [all_staging, reviews, workflow_state, approved_scope, current_native_artifacts]
-    write: [assignments, workflow_state, approval_briefs, central_finding_register]
+    read: [all_staging, reviews, workflow_state, approved_scope, current_native_artifacts, live_geoai_tech_report, technology_backlog]
+    write: [assignments, workflow_state, approval_briefs, central_finding_register, technology_work_items, technology_dashboard]
   research-librarian:
-    read: [approved_sources, course_scope]
-    write: [research_staging]
+    read: [approved_sources, course_scope, assigned_tech_report_entries, assigned_discovery_packets]
+    write: [research_staging, exact_assigned_report_blocks_when_explicit_report_writer]
   pedagogy-architect:
-    read: [accepted_evidence, course_constitution]
+    read: [accepted_evidence, course_constitution, assigned_tech_report_entries, technology_work_items]
     write: [pedagogy_staging]
   course-builder:
-    read: [accepted_evidence, approved_blueprint, templates]
+    read: [accepted_evidence, approved_blueprint, templates, assigned_tech_report_entries, technology_work_items]
     write: [content_staging]
   student-tester:
-    read: [student_facing_drafts]
+    read: [student_facing_drafts, assigned_tech_report_entries, technology_work_items]
     write: [review_staging]
   visual-designer:
-    read: [assigned_content, design_system, approved_assets, live_usf_branding, critic_findings]
+    read: [assigned_content, design_system, approved_assets, live_usf_branding, critic_findings, assigned_tech_report_entries, technology_work_items]
     write: [design_staging]
   independent-critic:
-    read: [assigned_exact_artifacts, complete_package, standards, accepted_sources, test_and_render_evidence]
+    read: [assigned_exact_artifacts, complete_package, standards, accepted_sources, test_and_render_evidence, assigned_tech_report_entries, technology_work_items]
     write: [review_staging]
   publisher:
     read: [approved_package, approvals]
@@ -196,3 +196,72 @@ runtime_evidence:
   configuration_update_is_execution: false
   originating_computer_dependency: none_required_by_contract
   deployed_scheduler_and_run_records_required_for_background_work_claims: true
+
+technology_report:
+  canonical_url: https://chatgpt.com/space/page_497f1fd4edd48191928bd8fa39177eda
+  page_id: page_497f1fd4edd48191928bd8fa39177eda
+  required_at_each_cycle_start: true
+  shared_assigned_role_read_access: [assigned_current_report_entries, report_revision_metadata]
+  shared_read_does_not_expand_account_or_source_authorization: true
+  revision_evidence: [identity, edition, observed_sequence_or_revision_or_hash, retrieved_at, selected_technology_ids]
+  report_is_scope_authority: false
+  report_is_gate_approval: false
+  missing_access: mark_dependency_and_continue_unrelated_work
+  missing_fields: UNKNOWN_or_NOT_RUN
+  delta_review: affected_entries_weeks_artifacts_and_shared_consumers
+  roles: [candidate, instructor_preparation, instructor_demo, approved_student_use, hold, retired]
+  role_is_evidence_status: false
+  actual_incorporation_is_readiness: false
+  evidence_surfaces: [documentation, execution, simulation, human_pilot]
+
+technology_adoption:
+  selection_basis: existing_learning_objective_and_environmental_evidence_value
+  work_item_fields: [cycle_id, report_revision, technology_ids, week, objective, artifact_ids_and_revisions, exact_location, content_replaced, student_action, student_evidence, assessment, estimated_and_measured_minutes, owner, assigned_writer, prerequisites, separated_licenses, cost_quota_hardware, permissions_privacy, independent_gis_check, acceptance_evidence, fallback, stop_condition, cross_week_impact]
+  role_handoffs:
+    research: verify_primary_sources_versions_access_and_rights
+    pedagogy: align_objective_replacement_assessment_and_time
+    builder: complete_activity_key_setup_save_and_fallback
+    tester: actual_behavior_friction_and_failure_evidence
+    designer: brand_accessibility_visuals_and_rights
+    critic: every_cycle_adoption_review_and_independent_fix_recheck
+  requires_existing_scope_authority: true
+  student_use_requires_exact_use_authority: true
+  pilot_is_scope_authorization: false
+  new_discovery_automatically_changes_class: false
+  preserves_course_time_and_individual_work: true
+  arcgis_pro_target: 3.7.2
+  software_provision_is_execution: false
+  all_existing_release_gates_apply: true
+
+technology_discovery:
+  submitters: any_assigned_agent
+  packet_fields: [name, component_type, canonical_primary_source, environmental_teaching_value, suggested_week_and_activity, known_licenses_cost_access, uncertainties, actual_surfaces_examined, discoverer, discovery_date]
+  outside_assignment: queue_only_no_unassigned_execution_or_access_expansion
+  coordinator: course-producer
+  steps: [intake, deduplicate_inventory_and_backlog, assign_research_verification, assign_one_report_writer, guarded_same_report_update, critic_review_before_adoption]
+  incomplete_candidates: backlog_with_explicit_unknowns
+  deduplication_keys: [names, aliases, repositories, component_identity]
+  existing_ids: preserve_and_reuse
+  new_ids: allocate_after_fresh_deduplication_read
+  related_components: link_without_collapsing_distinct_tools
+
+technology_feedback:
+  required_after_each_cycle: true
+  fields: [tested_versions, actual_results_and_failures, evidence_surfaces, evidence_links, timing_observations, critic_findings_and_dispositions, adoption_decisions, next_owner_and_action]
+  writer_role: research_librarian_explicitly_assigned_as_report_writer
+  writer_permissions:
+    read: [complete_current_report_for_topology_history_and_id_alias_deduplication, assigned_verified_evidence]
+    write: [exact_assigned_report_blocks_and_change_log]
+    excluded: [teaching_artifacts, workflow_state, sharing_permissions, publication]
+  single_writer_per_report: true
+  fresh_target_read_required: true
+  applicable_page_or_native_skills_required: true
+  revision_or_hash_guard_required: true
+  concurrent_conflict: reread_and_reconcile_never_blind_overwrite
+  preservation: [same_report_identity, stable_technology_ids, useful_profiles, history]
+  dated_change_log_required: true
+  readback_and_saved_revision_required: true
+  credentials_student_data_and_raw_private_traces: prohibited
+  changed_evidence: reopen_affected_adoption_and_review_consumers
+  dashboard_fields: [week, proposed_use, actual_incorporation, evidence_status, unresolved_dependency, next_owner_and_action, report_revision, technology_ids]
+  automatic_schedule_created_by_configuration: false
