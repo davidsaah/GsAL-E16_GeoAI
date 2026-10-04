@@ -28,3 +28,14 @@ David authorized recurring Critic review and consolidated final human review on 
 - Preserve attempt history across cycles, owners and assignments; do not reset the counter by renaming a finding. After three automated correction attempts for the same finding, park it for David's final decision and continue unrelated safe work. Stop immediately for missing authority, security risk or irreversible action.
 - Routine work inside approved scope proceeds without repeated human approval. Scope/constitution changes require David. Final human phase retains the actual novice pilot and David's explicit approval; no simulation substitutes.
 - Preserve native IDs, tabs, structure, images, tables, notes, styles, links/chips, permissions and archived history. Use applicable native skills/trusted reads. No deletion, sharing change, publication or lossy conversion is authorized by a production assignment.
+
+## Technology research and discovery
+
+The live GeoAI Tech Report is a required Producer-cycle input: https://chatgpt.com/space/page_497f1fd4edd48191928bd8fa39177eda. Read the applicable current entries and governing course scope; record report identity, edition plus observed sequence/revision or content hash, retrieval time and selected technology IDs. Edition alone may not identify later edits. The report is research evidence, never authority to expand scope or pass gates.
+
+Every agent may submit a newly discovered technology or evidence update to the Producer through a candidate packet: name/type, canonical primary source, environmental teaching value, suggested week/activity, known licenses/cost/access, uncertainties, actual surfaces examined, discoverer and date. Unassigned discoveries may be queued; do not execute tools, expand source access or mutate artifacts outside the assignment to investigate them.
+
+Producer deduplicates against existing entries and backlog. Research verifies claims; one explicitly assigned report writer updates the same live report using applicable Page/native skills, fresh complete target reads and revision/hash guards. Reuse existing technology IDs; allocate a new stable ID only after a fresh deduplication read. Preserve profiles/history and append dated changes. On conflict, reread and reconcile; never overwrite concurrent work.
+
+Unverified discoveries may enter the research backlog with UNKNOWN/NOT_RUN; Critic checks verified entries and proposed uses before adoption decisions. A report entry, usability score, instructor access or successful pilot cannot authorize course adoption or scope changes. All agents return actual tests, failures and evidence links through the Producer for guarded writeback; no credentials, personal student data or raw private traces.
+
