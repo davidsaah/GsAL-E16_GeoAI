@@ -1,5 +1,5 @@
 name: e16-course-production
-version: 0.1.0
+version: 0.2.0
 owner: David Saah
 coordinator: course-producer
 
@@ -19,6 +19,14 @@ global_rules:
     unavailable_fallback: nonpenalized manual inspection and NOT_RUN disclosure
     other_weeks: no_code
   final_human_approval_required: true
+  human_review_phase: final
+  routine_in_scope_human_approval_required: false
+  scope_or_constitution_change_requires_david: true
+  state_updates_by: course-producer
+  max_revision_cycles_scope: per_finding
+  finding_history_persists_across_cycles_and_assignments: true
+  automated_gates_do_not_imply_human_approval: true
+  publication_authorized_by_this_assignment: false
 
 states:
   - SCOPED
@@ -41,7 +49,7 @@ transitions:
   - from: RESEARCH_COMPLETE
     to: PEDAGOGY_APPROVED
     actor: pedagogy-architect
-    gate: david_scope_approval
+    gate: in_scope_blueprint_rubric_and_critic_review
 
   - from: PEDAGOGY_APPROVED
     to: CONTENT_DRAFTED
@@ -51,17 +59,17 @@ transitions:
   - from: CONTENT_DRAFTED
     to: STUDENT_TESTED
     actor: student-tester
-    gate: no_critical_usability_findings
+    gate: no_critical_or_major_usability_findings
 
   - from: STUDENT_TESTED
     to: DESIGN_COMPLETE
     actor: visual-designer
-    gate: accessibility_report_complete
+    gate: design_complete
 
   - from: DESIGN_COMPLETE
     to: CRITIC_PASSED
     actor: independent-critic
-    gate: critic_recommendation_pass
+    gate: critic_passed
 
   - from: CRITIC_PASSED
     to: HUMAN_PILOT_PASSED
@@ -87,13 +95,14 @@ revision_routes:
     return_to: course-builder
   - trigger: design_or_accessibility_failure
     return_to: visual-designer
-  - trigger: three_failed_revision_cycles
-    escalate_to: david-saah
+  - trigger: three_failed_revision_cycles_for_same_finding
+    disposition: park_for_final_david_decision
+    continue: unrelated_safe_work
 
 permissions:
   course-producer:
-    read: [all_staging, reviews, workflow_state]
-    write: [assignments, workflow_state, approval_briefs]
+    read: [all_staging, reviews, workflow_state, approved_scope, current_native_artifacts]
+    write: [assignments, workflow_state, approval_briefs, central_finding_register]
   research-librarian:
     read: [approved_sources, course_scope]
     write: [research_staging]
@@ -107,10 +116,10 @@ permissions:
     read: [student_facing_drafts]
     write: [review_staging]
   visual-designer:
-    read: [student_tested_content, design_system, approved_assets]
+    read: [assigned_content, design_system, approved_assets, live_usf_branding, critic_findings]
     write: [design_staging]
   independent-critic:
-    read: [complete_package, standards]
+    read: [assigned_exact_artifacts, complete_package, standards, accepted_sources, test_and_render_evidence]
     write: [review_staging]
   publisher:
     read: [approved_package, approvals]
@@ -121,3 +130,69 @@ notifications:
     audience: david-saah
     format: mobile_summary
     fields: [class_number, current_state, decision_needed, critical_risks, next_action]
+
+# These are operating contracts, not proof of a deployed/executed runtime.
+production_cycles:
+  required_for: every_producer_cycle
+  new_reports_require_review_context: true
+  schema_validity_alone_is_gate_pass: false
+  steps: [produce_or_revise, test_affected_actions, render_affected_surfaces, critic_review, assign_corrections, fresh_readback_and_independent_recheck]
+  assignment_fields: [cycle_id, bounded_weeks, input_ids_and_revisions, role, permitted_operations, expected_handoff]
+  default_specialist_access: read_only
+  mutation_control: one_assigned_writer_per_artifact
+  coordinator_authors_instructional_content: false
+  required_review_dimensions: [science, gis_validity, sources, pedagogy, timing, accessibility, governance, reproducibility, visual_clarity, branding, fallback_operations]
+  review_surfaces: [metadata, full_text, structure, pixels, tool_run, simulation, human]
+  findings_fields: [finding_id, week, artifact_id_and_revision, exact_location, governing_source, severity, exact_old_and_replacement, reason, preservation_risks, owner, acceptance_evidence, revision_count]
+  handoff_matrix:
+    rows: 8
+    columns: [week, input_ids_and_revisions, within_week_status_and_evidence, cross_week_impact, open_dependency, next_owner]
+    coverage_labels: [CHECKED, PARTIAL, NOT_REVIEWED, BLOCKED, NOT_APPLICABLE]
+    coverage_is_gate_pass: false
+  shared_resource_consumers_reviewed: true
+  closure_requires: [fresh_saved_artifact_readback, independent_acceptance_recheck]
+  after_three_attempts: park_finding_for_final_human_decision_and_continue_unrelated_safe_work
+  immediate_escalation: [missing_authority, security_risk, irreversible_action]
+  native_preservation_required: true
+  sharing_changes_allowed: false
+  deletions_allowed: false
+
+critic_modes:
+  formative:
+    every_cycle: true
+    separate_reviewer_required: true
+    same_primary_family_allowed: advisory_only
+    may_issue_formal_critic_pass: false
+    incomplete_dimensions: explicit_partial_or_blocked
+  formal_final:
+    different_primary_family_from_builder_required: true
+    exact_final_artifacts_required: true
+    unavailable_independence: BLOCK
+    all_required_acceptance_evidence_required: true
+
+gate_contracts:
+  in_scope_blueprint_rubric_and_critic_review:
+    requires: [existing_david_scope_authorization, rubric_evidence, formative_critic_review, no_unresolved_critical_or_major_blueprint_findings]
+    is_new_human_approval: false
+  no_critical_or_major_usability_findings:
+    automated_or_simulated_review_only: true
+    no_unresolved_critical_or_major_usability_findings: true
+    does_not_establish_human_pilot: true
+  design_complete:
+    requires: [rendered_final_package_review, accessibility_and_brand_reports, asset_rights_evidence]
+  critic_passed:
+    requires: [formal_final_review, different_primary_model_family, exact_final_artifacts, all_blocking_findings_resolved]
+  human_final_phase:
+    order: [actual_novice_pilot, consolidated_david_review]
+    no_simulation_substitution: true
+    pilot_measurement_required: true
+    final_brief_fields: [eight_week_dashboard, exact_artifact_revisions, finding_dispositions, review_lineage_and_independence, actual_runtime_evidence, rights_and_accessibility, measured_or_estimated_timing, unresolved_decisions]
+  changes_after_acceptance:
+    invalidate: affected_artifacts_and_downstream_consumers
+    require: [affected_path_retest, affected_render_review, critic_recheck, renewed_applicable_human_approval]
+    published_changes: forbidden
+
+runtime_evidence:
+  configuration_update_is_execution: false
+  originating_computer_dependency: none_required_by_contract
+  deployed_scheduler_and_run_records_required_for_background_work_claims: true
