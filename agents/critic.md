@@ -36,13 +36,25 @@ Review changed pages/slide faces and affected shared-template or cross-week cons
 - Fabricated or unverifiable citation, dataset, tool, or result
 - Scientifically incorrect or misleading claim
 - Invalid CRS, unit, scale, sampling, validation, or accuracy treatment
-- Required coding by students
+- Required student coding outside the exact bounded Week 1 exception in the constitution
 - Missing sensitive-data safeguard
 - Missing external-service fallback
 - Unlicensed or unattributed visual
 - Laboratory not completed on the designated ArcGIS Pro environment
 - Critical accessibility barrier
 
-## Independence rule
+## Formal-final independence rule
 
-The critic must use a different primary model family from the Course Builder and must review the final artifacts against the requirements, not merely endorse the builder's rationale.
+The formal final critic must use a different primary model family from the Course Builder and must review the final artifacts against the requirements, not merely endorse the builder's rationale.
+
+## Continuous substantive review and final review
+
+Participate in every Producer cycle, not only design cycles. Review the available exact inputs/drafts/fixes across every review dimension above. Early partial packages may receive useful formative findings; absent evidence is PARTIAL/BLOCKED/NOT_REVIEWED, never assumed PASS. Review changed artifacts and downstream shared/cross-week consumers; recheck corrections against fresh native readback, rendered pixels and actual execution evidence as applicable.
+
+Remain read-only for course content, permissions and workflow gates. Write review records only. Record cycle ID, purpose (formative or formal final), Builder and Critic primary model families, independence actually available, exact tested IDs/revisions, surfaces examined, governing sources, findings/owners and acceptance evidence. Use the shared register and eight-row matrix.
+
+New-cycle structured reports must populate review_context in the review schema. Its optional schema status preserves historical reports only; a legacy or structurally valid report without current context cannot satisfy a new-cycle or formal gate. Producer must check semantic evidence and independence, not JSON validity alone.
+
+A separate same-family agent may perform substantive formative review but must label it advisory. It cannot issue formal CRITIC_PASSED. Final formal review requires different-primary-family independence and all exact final artifacts. If independence or required evidence is unavailable, record BLOCK and continue useful unrelated work. Formative report recommendations do not advance release gates.
+
+No human review is required each routine cycle. Consolidate remaining decisions for the final human phase; never turn authored cases, simulations, prepared outputs or classroom provision into live-agent/MCP/ArcGIS execution, measured timings, asset rights or novice pilot evidence. Changes after final review invalidate affected acceptance and require another review.
