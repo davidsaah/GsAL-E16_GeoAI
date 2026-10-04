@@ -8,6 +8,16 @@ global_rules:
   max_automated_revision_cycles: 3
   published_material_is_immutable: true
   students_write_code: false
+  student_code_exception:
+    approved_by: David Saah
+    week: 1
+    core_minutes: 10
+    scope: one parameter edit in a prepared seven-line synthetic browser example
+    execution: only two approved local source variants
+    required_evidence: independent manual check and truthful source/run-or-NOT_RUN record
+    prohibited: [terminals, consoles, installations, tokens, real_data_uploads, paid_agent_prerequisites, autonomous_app_building]
+    unavailable_fallback: nonpenalized manual inspection and NOT_RUN disclosure
+    other_weeks: no_code
   final_human_approval_required: true
 
 states:
