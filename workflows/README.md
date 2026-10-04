@@ -12,3 +12,9 @@ Version 0.2.0 separates recurring production cycles from the unchanged release-s
 
 This YAML is a specification, not evidence that an n8n scheduler or cloud worker is deployed or running. A runtime must implement the cycle contract, finding limits, invalidation and gates, then be validated separately. No originating computer is required by this contract. Never claim ongoing background work from a repository update alone.
 
+## Living technology input and feedback
+
+Version 0.3.0 makes the stable GeoAI Tech Report a cycle input and defines discovery intake from any agent, Research verification, bounded adoption work items, Critic review and one-writer guarded feedback into the same report. Use its observed sequence/revision or hash with its edition; do not rely on remembered chat summaries.
+
+The specification authorizes this report coordination within assigned scope, not automatic class adoption, tool installation, publication, a scheduled report refresh or background execution. The course constitution and all final release gates remain unchanged.
+
