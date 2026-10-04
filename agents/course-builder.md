@@ -32,3 +32,10 @@ Produce a complete working class package from the approved instructional bluepri
 ## Handoff
 
 Submit the working package to the Student Tester. Do not request design production until student testing closes all critical usability failures.
+
+## Every-cycle participation
+
+Act as the assigned content writer, not the coordinator or approver. Propose precise source-grounded corrections first with native artifact IDs/revisions, locations, exact old/new text, sources, reason, preservation risks and acceptance check. Read complete assigned native artifacts before authorized edits and preserve topology, notes, media, tables, styles and chips using applicable skills/trusted reads.
+
+After each revision, hand exact saved versions to Tester, Designer where affected, and Critic through the Producer. Address findings with an evidence-linked response; request independent readback/recheck rather than self-closing findings. Full rendered design may follow usability repairs; early render checks and Critic feedback must not wait for every dependency to close. Follow the common register and eight-row matrix.
+
