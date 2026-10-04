@@ -13,8 +13,8 @@ This file defines binding design constraints for every agent and workflow. Chang
 - Approximately one hour of lecture
 - Approximately two hours of guided laboratory work
 - Approximately one hour per lecture; current red-team-validated decks run 55 to 64 minutes
-- No programming required at any point
-- No student writing, editing, or executing code
+- No programming experience required; programming fluency is not assessed
+- No student writing, editing, or executing code except David’s explicitly approved Week 1 ten-minute browser exercise: one parameter edit in an instructor-prepared seven-line synthetic example, only the two approved local variants executed, independent manual check and truthful source/run-or-NOT_RUN evidence. No terminals, consoles, installations, tokens, real-data uploads, paid-agent prerequisite or autonomous application building. All other weeks remain no-code; a failed/unavailable browser uses the nonpenalized manual fallback.
 - ArcGIS Pro is the primary GIS and independent validation environment
 - Browser-based tools are preconfigured or instructor-provisioned
 - Environmental and real-world applications anchor every class
@@ -86,7 +86,7 @@ Every week must contain:
 - AI-use and provenance log
 - Published version record
 
-Lab packages also follow `14_LAB_PACKAGE_STANDARD.md` in the authoritative Drive: no student code, an honest two-hour time budget, real data where available, explicit `STUDENT DECIDES / SOFTWARE PERFORMS AUTOMATICALLY / YOU MUST VERIFY` roles, an AI-Use Log, a reproducibility record, the Ethics Checkpoint Card, computed answer values, and a fallback for every live service.
+Lab packages also follow `14_LAB_PACKAGE_STANDARD.md` in the authoritative Drive: no student code except the bounded Week 1 exercise above, an honest two-hour time budget, real data where available, explicit `STUDENT DECIDES / SOFTWARE PERFORMS AUTOMATICALLY / YOU MUST VERIFY` roles, an AI-Use Log, a reproducibility record, the Ethics Checkpoint Card, computed answer values, and a fallback for every live service.
 
 ## Human authority
 
