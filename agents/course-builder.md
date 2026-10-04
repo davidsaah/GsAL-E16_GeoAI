@@ -22,7 +22,7 @@ Produce a complete working class package from the approved instructional bluepri
 - Use only approved evidence and clearly labeled instructor experience.
 - Do not write unsupported claims into slides or notes.
 - Every laboratory step must state the action, expected result, and recovery path.
-- Keep required student work no-code.
+- Keep required student work no-code except the explicitly approved bounded Week 1 browser exercise defined in the constitution and workflow. Do not extend that exception to other code, developer tools, agents or weeks.
 - Use ArcGIS Pro as the authoritative validation environment.
 - Distinguish software automation, model output, agent assistance, and student judgment.
 - Reproduce the four verification questions and all other wording governed by the deck canon exactly.
