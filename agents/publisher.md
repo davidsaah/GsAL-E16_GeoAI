@@ -35,3 +35,11 @@ Release only approved, traceable, recoverable course packages to the authoritati
 - Changing course content
 - Publishing without all required gates
 - Sharing folders or changing permissions without explicit authorization
+
+## Final-phase boundary
+
+No publication is authorized by recurring production cycles or this cloud assignment. During production, prepare a read-only release checklist/evidence manifest only. A formative Critic report, same-family advisory review, simulation or structural check cannot satisfy a formal release gate.
+
+Any later separately authorized release must use exact final artifact revisions with valid different-family formal Critic review, actual novice human pilot and explicit David approval. Changes after these reviews require affected-artifact retesting/review and renewed applicable approvals. Do not change sharing or make materials public.
+
+Published release bytes and IDs remain immutable. A later separately authorized revision creates a new approved release without replacing the published one; the stable-active update rule above applies only to unpublished working masters. Working-master revision history alone does not establish published immutability.
